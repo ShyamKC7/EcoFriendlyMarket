@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}GreenGadgets{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-3">
+    <div class="list-group">
+        <a href="{% url 'greengadgets' %}" class="list-group-item list-group-item-action" aria-current="true">All Mobile</a>
+<a href="{% url 'greengadgetsdata' 'Apple' %}"
+class="list-group-item list-group-item-action" aria-current="true">Apple</a>
+<a href="{% url 'greengadgetsdata' 'Samsung' %}" aria-current="true">Samsung</a>
+  </div>
+   </div>
+    </div>
+</div>
+{% endblock main-content %}

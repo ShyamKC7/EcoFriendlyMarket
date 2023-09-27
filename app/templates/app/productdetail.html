@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Product Detail{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+   <img src="{{product.product_image.url}}" alt="" class="img-fluid img-thumbnail">
+  </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>Product Title: {{product.title}}</h2>
+   <hr>
+   <p>{{product.description}}</p> <br>
+   <h4>$ {{product.discounted_price}} <small class="fw-light text-decoration-line-through">$ {{product.selling_price}}</small></h4> <br>
+   
+   <form action="/add-to-cart" class="d-inline">
+    {% csrf_token %}
+    <input type="hidden" name="prod_id" value={{product.id}} id="prod_id">
+    <button type="submit" class="btn btn-primary shadow px-5 py-2">Add to Cart</button>
+   </form>
+   
+   
+   <a href="{% url 'buy-now' %}" class="btn btn-success shadow px-5 py-2 ms-4">Buy Now</a>
+   <h5 class="mt-5">Special Deals</h5>
+   <ul> 
+    <li>10% off for first-time buyers</li>
+    <li>Free eco-friendly shipping.</li>
+    <li>Buy one pair, get 50% off on the second pair.</li>
+    <li>Exclusive lifetime warranty for our Sustainable Shoes.</li>
+   </ul>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}
