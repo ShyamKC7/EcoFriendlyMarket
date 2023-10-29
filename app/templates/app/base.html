@@ -49,10 +49,9 @@
                FASHION
              </a>
              <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
-               <li><a class="dropdown-item" href="#">Clothing</a></li>
+               <li><a class="dropdown-item" href="#">Clothing Brands</a></li>
                <li><a class="dropdown-item" href="#">Footwear</a></li>
                <li><a class="dropdown-item" href="#">Accessories</a></li>
-               <li><a class="dropdown-item" href="#">Fashion Trends</a></li>
              </ul>
            </li>
          </ul>
@@ -75,14 +74,14 @@
               </ul>
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'showcart' %}" class="nav-link text-white"><span class="badge bg-info">2</span> CART </a>
+             <a href="{% url 'showcart' %}" class="nav-link text-white"><span class="badge bg-info">{{totalitem}}</span> CART </a>
             </li>
             {% else %}
             <li class="nav-item mx-2">
-             <a href="{% url 'login' %}" class="nav-link text-white">LOGIN</a>
+             <a href="{% url 'login' %}" class="nav-link text-white">SIGN IN</a>
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'customerregistration' %}" class="nav-link text-white">REGISTRATION</a>
+             <a href="{% url 'customerregistration' %}" class="nav-link text-white">SIGN UP</a>
             </li>
             {% endif %}
           </ul>
@@ -92,7 +91,7 @@
     </nav>
     {% block banner_slider %} {% endblock banner_slider %}
     {% block livesale %} {% endblock livesale %}
-    {% block main-content %} {% endblock main-content %}
+    {% block main-content %} {% endblock main-content %} 
 
     <!-- Start Footer -->
     <footer class="container-fluid bg-success text-center p-2 mt-5">

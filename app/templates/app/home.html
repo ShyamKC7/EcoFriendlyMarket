@@ -44,7 +44,7 @@
  <div class="owl-carousel" id="slider1">
   {% for g in greengadgets %} 
   <a href="{% url 'product-detail' g.id %}" class="btn"><div class="item"><img src="{{g.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{g.title}}</span><br><span class="fs-5">$ {{g.discounted_price}}</span></div></a>
-  {%endfor%} 
+  {% endfor %} 
 </div>
 </div>
 <!-- End 1st Product Slider -->
@@ -63,11 +63,11 @@
 
 <!-- 3rd Product Slider -->
 <div class="m-3">
-  <h2>Sustainable Fashion Trends</h2>
+  <h2>Sustainable Clothing Brands</h2>
   <!-- Slider 3 -->
   <div class="owl-carousel" id="slider3">
-   {% for ft in fashiontrends %} 
-   <a href="{% url 'product-detail' ft.id %}" class="btn"><div class="item"><img src="{{ft.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{ft.title}}</span><br><span class="fs-5">$ {{ft.discounted_price}}</span></div></a>
+   {% for c in clothingbrands %} 
+   <a href="{% url 'product-detail' c.id %}" class="btn"><div class="item"><img src="{{c.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{c.title}}</span><br><span class="fs-5">$ {{c.discounted_price}}</span></div></a>
    {%endfor%} 
  </div>
  </div>

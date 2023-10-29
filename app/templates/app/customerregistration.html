@@ -23,7 +23,7 @@
      <input type="submit" value="Submit" class="btn btn-primary">
     <br>
     <div class="text-center text-success fw-bold"><small>EXISTING USER?<a href="{% url 'login' %}" 
-      class="text-dark">LOG IN TO YOUR ACCOUNT</a> </small></div>
+      class="text-dark">SIGN IN TO YOUR ACCOUNT</a> </small></div>
        {% if form.non_field_errors %}
        {% for error in form.non_field_errors %}
        <p class="alert alert-danger my-3">{{error}}</p>
